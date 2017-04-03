@@ -1,0 +1,1823 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/archiverjs/node-archiver"
+
+    >archiver (v1.3.0)</a>
+</h1>
+<h4>a streaming interface for archive generation</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.archiver">module archiver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core">
+            function <span class="apidocSignatureSpan">archiver.</span>core
+            <span class="apidocSignatureSpan">(format, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.create">
+            function <span class="apidocSignatureSpan">archiver.</span>create
+            <span class="apidocSignatureSpan">(format, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.registerFormat">
+            function <span class="apidocSignatureSpan">archiver.</span>registerFormat
+            <span class="apidocSignatureSpan">(format, module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">archiver.</span>core.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.archiver.core">module archiver.core</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.core">
+            function <span class="apidocSignatureSpan">archiver.</span>core
+            <span class="apidocSignatureSpan">(format, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.super_">
+            function <span class="apidocSignatureSpan">archiver.core.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.archiver.core.prototype">module archiver.core.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._abort">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_abort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._append">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_append
+            <span class="apidocSignatureSpan">(filepath, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._finalize">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_finalize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._maybeFinalize">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_maybeFinalize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._moduleAppend">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleAppend
+            <span class="apidocSignatureSpan">(source, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._moduleFinalize">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleFinalize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._modulePipe">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_modulePipe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._moduleSupports">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleSupports
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._moduleUnpipe">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleUnpipe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._normalizeEntryData">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_normalizeEntryData
+            <span class="apidocSignatureSpan">(data, stats)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._onModuleError">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onModuleError
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._onQueueDrain">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onQueueDrain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._onQueueTask">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onQueueTask
+            <span class="apidocSignatureSpan">(task, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._onStatQueueTask">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onStatQueueTask
+            <span class="apidocSignatureSpan">(task, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._shutdown">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_shutdown
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._transform">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_transform
+            <span class="apidocSignatureSpan">(chunk, encoding, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype._updateQueueTaskWithStats">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_updateQueueTaskWithStats
+            <span class="apidocSignatureSpan">(task, stats)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.abort">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>abort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.append">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>append
+            <span class="apidocSignatureSpan">(source, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.bulk">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>bulk
+            <span class="apidocSignatureSpan">(mappings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.directory">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>directory
+            <span class="apidocSignatureSpan">(dirpath, destpath, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.file">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>file
+            <span class="apidocSignatureSpan">(filepath, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.finalize">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>finalize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.glob">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>glob
+            <span class="apidocSignatureSpan">(pattern, options, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.pointer">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>pointer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.setFormat">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>setFormat
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.setModule">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>setModule
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.archiver.core.prototype.use">
+            function <span class="apidocSignatureSpan">archiver.core.prototype.</span>use
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.archiver" id="apidoc.module.archiver">module archiver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core" id="apidoc.element.archiver.core">
+        function <span class="apidocSignatureSpan">archiver.</span>core
+        <span class="apidocSignatureSpan">(format, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">core = function (format, options) {
+  if (!(this instanceof Archiver)) {
+    return new Archiver(format, options);
+  }
+
+  if (typeof format !== &#x27;string&#x27;) {
+    options = format;
+    format = &#x27;zip&#x27;;
+  }
+
+  options = this.options = util.defaults(options, {
+    highWaterMark: 1024 * 1024,
+    statConcurrency: 4
+  });
+
+  Transform.call(this, options);
+
+  this._entries = [];
+  this._format = false;
+  this._module = false;
+  this._pending = 0;
+  this._pointer = 0;
+
+  this._queue = async.queue(this._onQueueTask.bind(this), 1);
+  this._queue.drain = this._onQueueDrain.bind(this);
+
+  this._statQueue = async.queue(this._onStatQueueTask.bind(this), options.statConcurrency);
+
+  this._state = {
+    aborted: false,
+    finalize: false,
+    finalizing: false,
+    finalized: false,
+    modulePiped: false
+  };
+
+  this._streams = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.create" id="apidoc.element.archiver.create">
+        function <span class="apidocSignatureSpan">archiver.</span>create
+        <span class="apidocSignatureSpan">(format, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (format, options) {
+  if (formats[format]) {
+    var instance = new Archiver(format, options);
+    instance.setFormat(format);
+    instance.setModule(new formats[format](options));
+
+    return instance;
+  } else {
+    throw new Error(&#x27;create(&#x27; + format + &#x27;): format not registered&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @constructor
+* @param  {String} format The archive format to use.
+* @param  {Object} options See [Archiver]{@link Archiver}
+* @return {Archiver}
+*/
+var vending = function(format, options) {
+ return vending.<span class="apidocCodeKeywordSpan">create</span>(format, options);
+};
+
+/**
+* Creates a new Archiver instance.
+*
+* @param  {String} format The archive format to use.
+* @param  {Object} options See [Archiver]{@link Archiver}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.registerFormat" id="apidoc.element.archiver.registerFormat">
+        function <span class="apidocSignatureSpan">archiver.</span>registerFormat
+        <span class="apidocSignatureSpan">(format, module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerFormat = function (format, module) {
+  if (formats[format]) {
+    throw new Error(&#x27;register(&#x27; + format + &#x27;): format already registered&#x27;);
+  }
+
+  if (typeof module !== &#x27;function&#x27;) {
+    throw new Error(&#x27;register(&#x27; + format + &#x27;): format module invalid&#x27;);
+  }
+
+  if (typeof module.prototype.append !== &#x27;function&#x27; || typeof module.prototype.finalize !== &#x27;function&#x27;) {
+    throw new Error(&#x27;register(&#x27; + format + &#x27;): format module missing methods&#x27;);
+  }
+
+  formats[format] = module;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (typeof module.prototype.append !== &#x27;function&#x27; || typeof module.prototype.finalize !== &#x27;function&#x27;) {
+    throw new Error(&#x27;register(&#x27; + format + &#x27;): format module missing methods&#x27;);
+  }
+
+  formats[format] = module;
+};
+
+vending.<span class="apidocCodeKeywordSpan">registerFormat</span>(&#x27;zip&#x27;, require(&#x27;./lib/plugins/zip&#x27;));
+vending.registerFormat(&#x27;tar&#x27;, require(&#x27;./lib/plugins/tar&#x27;));
+vending.registerFormat(&#x27;json&#x27;, require(&#x27;./lib/plugins/json&#x27;));
+
+module.exports = vending;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.archiver.core" id="apidoc.module.archiver.core">module archiver.core</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.core" id="apidoc.element.archiver.core.core">
+        function <span class="apidocSignatureSpan">archiver.</span>core
+        <span class="apidocSignatureSpan">(format, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">core = function (format, options) {
+  if (!(this instanceof Archiver)) {
+    return new Archiver(format, options);
+  }
+
+  if (typeof format !== &#x27;string&#x27;) {
+    options = format;
+    format = &#x27;zip&#x27;;
+  }
+
+  options = this.options = util.defaults(options, {
+    highWaterMark: 1024 * 1024,
+    statConcurrency: 4
+  });
+
+  Transform.call(this, options);
+
+  this._entries = [];
+  this._format = false;
+  this._module = false;
+  this._pending = 0;
+  this._pointer = 0;
+
+  this._queue = async.queue(this._onQueueTask.bind(this), 1);
+  this._queue.drain = this._onQueueDrain.bind(this);
+
+  this._statQueue = async.queue(this._onStatQueueTask.bind(this), options.statConcurrency);
+
+  this._state = {
+    aborted: false,
+    finalize: false,
+    finalizing: false,
+    finalized: false,
+    modulePiped: false
+  };
+
+  this._streams = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.super_" id="apidoc.element.archiver.core.super_">
+        function <span class="apidocSignatureSpan">archiver.core.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transform(options) {
+  if (!(this instanceof Transform)) return new Transform(options);
+
+  Duplex.call(this, options);
+
+  this._transformState = new TransformState(this);
+
+  var stream = this;
+
+  // start out asking for a readable event once data is transformed.
+  this._readableState.needReadable = true;
+
+  // we have implemented the _read method, and done the other things
+  // that Readable wants before the first _read call, so unset the
+  // sync guard flag.
+  this._readableState.sync = false;
+
+  if (options) {
+    if (typeof options.transform === &#x27;function&#x27;) this._transform = options.transform;
+
+    if (typeof options.flush === &#x27;function&#x27;) this._flush = options.flush;
+  }
+
+  // When the writable side finishes, then flush out anything remaining.
+  this.once(&#x27;prefinish&#x27;, function () {
+    if (typeof this._flush === &#x27;function&#x27;) this._flush(function (er, data) {
+      done(stream, er, data);
+    });else done(stream);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.archiver.core.prototype" id="apidoc.module.archiver.core.prototype">module archiver.core.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._abort" id="apidoc.element.archiver.core.prototype._abort">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_abort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_abort = function () {
+  this._state.aborted = true;
+  this._queue.kill();
+  this._statQueue.kill();
+
+  if (this._queue.idle()) {
+    this._shutdown();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @return {this}
+*/
+Archiver.prototype.abort = function() {
+ if (this._state.aborted || this._state.finalized) {
+   return this;
+ }
+
+ this.<span class="apidocCodeKeywordSpan">_abort</span>();
+
+ return this;
+};
+
+/**
+* Appends an input source (text string, buffer, or stream) to the instance.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._append" id="apidoc.element.archiver.core.prototype._append">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_append
+        <span class="apidocSignatureSpan">(filepath, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_append = function (filepath, data) {
+  data = data || {};
+
+  var task = {
+    source: null,
+    filepath: filepath
+  };
+
+  if (!data.name) {
+    data.name = filepath;
+  }
+
+  data.sourcePath = filepath;
+  task.data = data;
+
+  if (data.stats &#x26;&#x26; data.stats instanceof fs.Stats) {
+    task = this._updateQueueTaskWithStats(task, data.stats);
+    this._queue.push(task);
+  } else {
+    this._statQueue.push(task);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          }
+        }
+      } catch(e) {
+        self.emit(&#x27;error&#x27;, e);
+        return;
+      }
+
+      self.<span class="apidocCodeKeywordSpan">_append</span>(filepath, entryData);
+    });
+  });
+
+  return this;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._finalize" id="apidoc.element.archiver.core.prototype._finalize">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_finalize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_finalize = function () {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    return;
+  }
+
+  this._state.finalizing = true;
+
+  this._moduleFinalize();
+
+  this._state.finalizing = false;
+  this._state.finalized = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Archiver.prototype._maybeFinalize = function() {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    return false;
+  }
+
+  if (this._state.finalize &#x26;&#x26; this._pending === 0 &#x26;&#x26; this._queue.idle() &#x26;&#x26; this._statQueue.idle()) {
+    this.<span class="apidocCodeKeywordSpan">_finalize</span>();
+    return true;
+  }
+
+  return false;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._maybeFinalize" id="apidoc.element.archiver.core.prototype._maybeFinalize">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_maybeFinalize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_maybeFinalize = function () {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    return false;
+  }
+
+  if (this._state.finalize &#x26;&#x26; this._pending === 0 &#x26;&#x26; this._queue.idle() &#x26;&#x26; this._statQueue.idle()) {
+    this._finalize();
+    return true;
+  }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  this._append(filepath, entryData);
+}
+
+function onWalkEnd() {
+  this._pending--;
+  this.<span class="apidocCodeKeywordSpan">_maybeFinalize</span>();
+}
+
+function onWalkError(err) {
+  this.emit(&#x27;error&#x27;, &#x27;directory: &#x27; + err);
+}
+
+var walker = walkdir(dirpath);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._moduleAppend" id="apidoc.element.archiver.core.prototype._moduleAppend">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleAppend
+        <span class="apidocSignatureSpan">(source, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_moduleAppend = function (source, data, callback) {
+  if (this._state.aborted) {
+    callback();
+    return;
+  }
+
+  this._module.append(source, data, function(err) {
+    this._task = null;
+
+    if (this._state.aborted) {
+      this._shutdown();
+      return;
+    }
+
+    if (err) {
+      this.emit(&#x27;error&#x27;, err);
+      setImmediate(callback);
+      return;
+    }
+
+    /**
+     * Fires when the entry&#x27;s input has been processed and appended to the archive.
+     *
+     * @event Archiver#entry
+     * @type {EntryData}
+     */
+    this.emit(&#x27;entry&#x27;, data);
+    this._entries.push(data);
+
+    setImmediate(callback);
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Archiver.prototype._onQueueTask = function(task, callback) {
+ if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+   callback();
+   return;
+ }
+
+ this._task = task;
+ this.<span class="apidocCodeKeywordSpan">_moduleAppend</span>(task.source, task.data, callback);
+};
+
+/**
+* Performs a file stat and reinjects the task back into the queue.
+*
+* @private
+* @param  {Object} task
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._moduleFinalize" id="apidoc.element.archiver.core.prototype._moduleFinalize">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleFinalize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_moduleFinalize = function () {
+  if (typeof this._module.finalize === &#x27;function&#x27;) {
+    this._module.finalize();
+  } else if (typeof this._module.end === &#x27;function&#x27;) {
+    this._module.end();
+  } else {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;module: no suitable finalize/end method found&#x27;));
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Archiver.prototype._finalize = function() {
+ if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+   return;
+ }
+
+ this._state.finalizing = true;
+
+ this.<span class="apidocCodeKeywordSpan">_moduleFinalize</span>();
+
+ this._state.finalizing = false;
+ this._state.finalized = true;
+};
+
+/**
+* Checks the various state variables to determine if we can `finalize`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._modulePipe" id="apidoc.element.archiver.core.prototype._modulePipe">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_modulePipe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_modulePipe = function () {
+  this._module.on(&#x27;error&#x27;, this._onModuleError.bind(this));
+  this._module.pipe(this);
+  this._state.modulePiped = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ if (this._state.module) {
+   this.emit(&#x27;error&#x27;, new Error(&#x27;module: module already set&#x27;));
+   return this;
+ }
+
+ this._module = module;
+ this.<span class="apidocCodeKeywordSpan">_modulePipe</span>();
+
+ return this;
+};
+
+/**
+* Returns the current length (in bytes) that has been emitted.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._moduleSupports" id="apidoc.element.archiver.core.prototype._moduleSupports">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleSupports
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_moduleSupports = function (key) {
+  if (!this._module.supports || !this._module.supports[key]) {
+    return false;
+  }
+
+  return this._module.supports[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Object}
+ */
+Archiver.prototype._updateQueueTaskWithStats = function(task, stats) {
+if (stats.isFile()) {
+  task.data.type = &#x27;file&#x27;;
+  task.data.sourceType = &#x27;stream&#x27;;
+  task.source = util.lazyReadStream(task.filepath);
+} else if (stats.isDirectory() &#x26;&#x26; this.<span class="apidocCodeKeywordSpan">_moduleSupports</span>(&#x27;directory&#x27
+;)) {
+  task.data.name = util.trailingSlashIt(task.data.name);
+  task.data.type = &#x27;directory&#x27;;
+  task.data.sourcePath = util.trailingSlashIt(task.filepath);
+  task.data.sourceType = &#x27;buffer&#x27;;
+  task.source = new Buffer(0);
+} else {
+  return task;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._moduleUnpipe" id="apidoc.element.archiver.core.prototype._moduleUnpipe">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_moduleUnpipe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_moduleUnpipe = function () {
+  this._module.unpipe(this);
+  this._state.modulePiped = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Unpipes the module and ends our internal stream.
+*
+* @private
+* @return void
+*/
+Archiver.prototype._shutdown = function() {
+ this.<span class="apidocCodeKeywordSpan">_moduleUnpipe</span>();
+ this.end();
+};
+
+/**
+* Tracks the bytes emitted by our internal stream.
+*
+* @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._normalizeEntryData" id="apidoc.element.archiver.core.prototype._normalizeEntryData">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_normalizeEntryData
+        <span class="apidocSignatureSpan">(data, stats)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_normalizeEntryData = function (data, stats) {
+  data = util.defaults(data, {
+    type: &#x27;file&#x27;,
+    name: null,
+    date: null,
+    mode: null,
+    prefix: null,
+    sourcePath: null,
+    stats: false
+  });
+
+  if (stats &#x26;&#x26; data.stats === false) {
+    data.stats = stats;
+  }
+
+  var isDir = data.type === &#x27;directory&#x27;;
+
+  if (data.name) {
+    if (typeof data.prefix === &#x27;string&#x27; &#x26;&#x26; &#x27;&#x27; !== data.prefix) {
+      data.name = data.prefix + &#x27;/&#x27; + data.name;
+      data.prefix = null;
+    }
+
+    data.name = util.sanitizePath(data.name);
+
+    if (data.name.slice(-1) === &#x27;/&#x27;) {
+      isDir = true;
+      data.type = &#x27;directory&#x27;;
+    } else if (isDir) {
+      data.name += &#x27;/&#x27;;
+    }
+  }
+
+  // 511 === 0777; 493 === 0755; 438 === 0666; 420 === 0644
+  if (typeof data.mode === &#x27;number&#x27;) {
+    if (win32) {
+      data.mode &#x26;= 511;
+    } else {
+      data.mode &#x26;= 4095
+    }
+  } else if (data.stats &#x26;&#x26; data.mode === null) {
+    if (win32) {
+      data.mode = data.stats.mode &#x26; 511;
+    } else {
+      data.mode = data.stats.mode &#x26; 4095;
+    }
+
+    // stat isn&#x27;t reliable on windows; force 0755 for dir
+    if (win32 &#x26;&#x26; isDir) {
+      data.mode = 493;
+    }
+  } else if (data.mode === null) {
+    data.mode = isDir ? 493 : 420;
+  }
+
+  if (data.stats &#x26;&#x26; data.date === null) {
+    data.date = data.stats.mtime;
+  } else {
+    data.date = util.dateify(data.date);
+  }
+
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   task.data.sourcePath = util.trailingSlashIt(task.filepath);
+   task.data.sourceType = &#x27;buffer&#x27;;
+   task.source = new Buffer(0);
+ } else {
+   return task;
+ }
+
+ task.data = this.<span class="apidocCodeKeywordSpan">_normalizeEntryData</span>(task.data, stats);
+ return task;
+};
+
+/**
+* Aborts the archiving process, taking a best-effort approach, by:
+*
+* - removing any pending queue tasks
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._onModuleError" id="apidoc.element.archiver.core.prototype._onModuleError">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onModuleError
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onModuleError = function (err) {
+  this.emit(&#x27;error&#x27;, err);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._onQueueDrain" id="apidoc.element.archiver.core.prototype._onQueueDrain">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onQueueDrain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onQueueDrain = function () {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    return;
+  }
+
+  if (this._state.finalize &#x26;&#x26; this._pending === 0 &#x26;&#x26; this._queue.idle() &#x26;&#x26; this._statQueue.idle()) {
+    this._finalize();
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._onQueueTask" id="apidoc.element.archiver.core.prototype._onQueueTask">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onQueueTask
+        <span class="apidocSignatureSpan">(task, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onQueueTask = function (task, callback) {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    callback();
+    return;
+  }
+
+  this._task = task;
+  this._moduleAppend(task.source, task.data, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._onStatQueueTask" id="apidoc.element.archiver.core.prototype._onStatQueueTask">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_onStatQueueTask
+        <span class="apidocSignatureSpan">(task, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onStatQueueTask = function (task, callback) {
+  if (this._state.finalizing || this._state.finalized || this._state.aborted) {
+    callback();
+    return;
+  }
+
+  fs.stat(task.filepath, function(err, stats) {
+    if (this._state.aborted) {
+      setImmediate(callback);
+      return;
+    }
+
+    if (err) {
+      this.emit(&#x27;error&#x27;, err);
+      setImmediate(callback);
+      return;
+    }
+
+    task = this._updateQueueTaskWithStats(task, stats);
+
+    if (task.source !== null) {
+      this._queue.push(task);
+      setImmediate(callback);
+    } else {
+      this.emit(&#x27;error&#x27;, new Error(&#x27;unsupported entry: &#x27; + task.filepath));
+      setImmediate(callback);
+      return;
+    }
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._shutdown" id="apidoc.element.archiver.core.prototype._shutdown">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_shutdown
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_shutdown = function () {
+  this._moduleUnpipe();
+  this.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+Archiver.prototype._abort = function() {
+ this._state.aborted = true;
+ this._queue.kill();
+ this._statQueue.kill();
+
+ if (this._queue.idle()) {
+   this.<span class="apidocCodeKeywordSpan">_shutdown</span>();
+ }
+};
+
+/**
+* Internal helper for appending files.
+*
+* @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._transform" id="apidoc.element.archiver.core.prototype._transform">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_transform
+        <span class="apidocSignatureSpan">(chunk, encoding, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_transform = function (chunk, encoding, callback) {
+  if (chunk) {
+    this._pointer += chunk.length;
+  }
+
+  callback(null, chunk);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype._updateQueueTaskWithStats" id="apidoc.element.archiver.core.prototype._updateQueueTaskWithStats">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>_updateQueueTaskWithStats
+        <span class="apidocSignatureSpan">(task, stats)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateQueueTaskWithStats = function (task, stats) {
+  if (stats.isFile()) {
+    task.data.type = &#x27;file&#x27;;
+    task.data.sourceType = &#x27;stream&#x27;;
+    task.source = util.lazyReadStream(task.filepath);
+  } else if (stats.isDirectory() &#x26;&#x26; this._moduleSupports(&#x27;directory&#x27;)) {
+    task.data.name = util.trailingSlashIt(task.data.name);
+    task.data.type = &#x27;directory&#x27;;
+    task.data.sourcePath = util.trailingSlashIt(task.filepath);
+    task.data.sourceType = &#x27;buffer&#x27;;
+    task.source = new Buffer(0);
+  } else {
+    return task;
+  }
+
+  task.data = this._normalizeEntryData(task.data, stats);
+  return task;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    data.name = filepath;
+  }
+
+  data.sourcePath = filepath;
+  task.data = data;
+
+  if (data.stats &#x26;&#x26; data.stats instanceof fs.Stats) {
+    task = this.<span class="apidocCodeKeywordSpan">_updateQueueTaskWithStats</span>(task, data.stats);
+    this._queue.push(task);
+  } else {
+    this._statQueue.push(task);
+  }
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.abort" id="apidoc.element.archiver.core.prototype.abort">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>abort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">abort = function () {
+  if (this._state.aborted || this._state.finalized) {
+    return this;
+  }
+
+  this._abort();
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.append" id="apidoc.element.archiver.core.prototype.append">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>append
+        <span class="apidocSignatureSpan">(source, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (source, data) {
+  if (this._state.finalize || this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;append: queue closed&#x27;));
+    return this;
+  }
+
+  data = this._normalizeEntryData(data);
+
+  if (typeof data.name !== &#x27;string&#x27; || data.name.length === 0) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;append: entry name must be a non-empty string value&#x27;));
+    return this;
+  }
+
+  if (data.type === &#x27;directory&#x27; &#x26;&#x26; !this._moduleSupports(&#x27;directory&#x27;)) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;append: entries of &#x22;directory&#x22; type not currently supported by this module&#x27;));
+    return this;
+  }
+
+  source = util.normalizeInputSource(source);
+
+  if (Buffer.isBuffer(source)) {
+    data.sourceType = &#x27;buffer&#x27;;
+  } else if (util.isStream(source)) {
+    data.sourceType = &#x27;stream&#x27;;
+  } else {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;append: input source must be valid Stream or Buffer instance&#x27;));
+    return this;
+  }
+
+  this._queue.push({
+    data: data,
+    source: source
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+// pipe archive data to the file
+archive.pipe(output);
+
+// append a file from stream
+var file1 = __dirname + &#x27;/file1.txt&#x27;;
+archive.<span class="apidocCodeKeywordSpan">append</span>(fs.createReadStream(file1), { name: &#x27;file1.txt&#x27; });
+
+// append a file from string
+archive.append(&#x27;string cheese!&#x27;, { name: &#x27;file2.txt&#x27; });
+
+// append a file from buffer
+var buffer3 = new Buffer(&#x27;buff it!&#x27;);
+archive.append(buffer3, { name: &#x27;file3.txt&#x27; });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.bulk" id="apidoc.element.archiver.core.prototype.bulk">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>bulk
+        <span class="apidocSignatureSpan">(mappings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bulk = function (mappings) {
+  if (process._loggedBulkDeprecation === false) {
+    process._loggedBulkDeprecation = true;
+    var warning = &#x27;Archiver.bulk() deprecated since 0.21.0&#x27;;
+    if (typeof process !== &#x27;undefined&#x27; &#x26;&#x26; typeof process.emitWarning !== &#x27;undefined&#x27;) {
+      process.emitWarning(warning, &#x27;DeprecationWarning&#x27;);
+    } else {
+      console.warn(warning);
+    }
+  }
+
+  if (this._state.finalize || this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;bulk: queue closed&#x27;));
+    return this;
+  }
+
+  if (!Array.isArray(mappings)) {
+    mappings = [mappings];
+  }
+
+  var self = this;
+  var files = util.file.normalizeFilesArray(mappings);
+
+  files.forEach(function(file){
+    var isExpandedPair = file.orig.expand || false;
+    var data = {};
+    var dataFunction = false;
+
+    if (typeof file.data === &#x27;function&#x27;) {
+      dataFunction = file.data;
+    } else if (typeof file.data === &#x27;object&#x27;) {
+      data = file.data;
+    }
+
+    file.src.forEach(function(filepath) {
+      var entryData = _.extend({}, data);
+      var entryName = isExpandedPair ? file.dest : (file.dest || &#x27;&#x27;) + &#x27;/&#x27; + filepath;
+      entryData.name = util.sanitizePath(entryName);
+
+      if (entryData.name === &#x27;.&#x27;) {
+        return;
+      }
+
+      try {
+        if (dataFunction) {
+          entryData = dataFunction(entryData);
+
+          if (typeof entryData !== &#x27;object&#x27;) {
+            throw new Error(&#x27;bulk: invalid data returned from custom function&#x27;);
+          }
+        }
+      } catch(e) {
+        self.emit(&#x27;error&#x27;, e);
+        return;
+      }
+
+      self._append(filepath, entryData);
+    });
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * and [minimatch]{@link https://github.com/isaacs/minimatch#properties} documentation
+ * for additional properties.
+ * @return {this}
+ */
+Archiver.prototype.bulk = function(mappings) {
+if (process._loggedBulkDeprecation === false) {
+  process._loggedBulkDeprecation = true;
+  var warning = &#x27;Archiver.<span class="apidocCodeKeywordSpan">bulk</span>() deprecated since 0.21.0&#x27;;
+  if (typeof process !== &#x27;undefined&#x27; &#x26;&#x26; typeof process.emitWarning !== &#x27;undefined&#x27;) {
+    process.emitWarning(warning, &#x27;DeprecationWarning&#x27;);
+  } else {
+    console.warn(warning);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.directory" id="apidoc.element.archiver.core.prototype.directory">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>directory
+        <span class="apidocSignatureSpan">(dirpath, destpath, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directory = function (dirpath, destpath, data) {
+  if (this._state.finalize || this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;directory: queue closed&#x27;));
+    return this;
+  }
+
+  if (typeof dirpath !== &#x27;string&#x27; || dirpath.length === 0) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;directory: dirpath must be a non-empty string value&#x27;));
+    return this;
+  }
+
+  this._pending++;
+
+  if (destpath === false) {
+    destpath = &#x27;&#x27;;
+  } else if (typeof destpath !== &#x27;string&#x27;){
+    destpath = dirpath;
+  }
+
+  var dataFunction = false;
+  if (typeof data === &#x27;function&#x27;) {
+    dataFunction = data;
+    data = {};
+  } else if (typeof data !== &#x27;object&#x27;) {
+    data = {};
+  }
+
+  function onWalkPath(filepath, stats){
+    var entryData = _.extend({}, data);
+    entryData.name = path.relative(dirpath, filepath).replace(/\\/g, &#x27;/&#x27;);
+    entryData.prefix = destpath;
+    entryData.stats = stats;
+
+    try {
+      if (dataFunction) {
+        entryData = dataFunction(entryData);
+
+        if (typeof entryData !== &#x27;object&#x27;) {
+          throw new Error(&#x27;directory: invalid data returned from custom function&#x27;);
+        }
+      }
+    } catch(e) {
+      this.emit(&#x27;error&#x27;, e);
+      return;
+    }
+
+    this._append(filepath, entryData);
+  }
+
+  function onWalkEnd() {
+    this._pending--;
+    this._maybeFinalize();
+  }
+
+  function onWalkError(err) {
+    this.emit(&#x27;error&#x27;, &#x27;directory: &#x27; + err);
+  }
+
+  var walker = walkdir(dirpath);
+
+  walker.on(&#x27;error&#x27;, onWalkError.bind(this));
+  walker.on(&#x27;directory&#x27;, onWalkPath.bind(this));
+  walker.on(&#x27;file&#x27;, onWalkPath.bind(this));
+  walker.on(&#x27;end&#x27;, onWalkEnd.bind(this));
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var buffer3 = new Buffer(&#x27;buff it!&#x27;);
+archive.append(buffer3, { name: &#x27;file3.txt&#x27; });
+
+// append a file
+archive.file(&#x27;file1.txt&#x27;, { name: &#x27;file4.txt&#x27; });
+
+// append files from a directory
+archive.<span class="apidocCodeKeywordSpan">directory</span>(&#x27;subdir/&#x27;);
+
+// append files from a glob pattern
+archive.glob(&#x27;subdir/*.txt&#x27;);
+
+// finalize the archive (ie we are done appending files but streams have to finish yet)
+archive.finalize();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.file" id="apidoc.element.archiver.core.prototype.file">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>file
+        <span class="apidocSignatureSpan">(filepath, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (filepath, data) {
+  if (this._state.finalize || this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;file: queue closed&#x27;));
+    return this;
+  }
+
+  if (typeof filepath !== &#x27;string&#x27; || filepath.length === 0) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;file: filepath must be a non-empty string value&#x27;));
+    return this;
+  }
+
+  this._append(filepath, data);
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+archive.append(&#x27;string cheese!&#x27;, { name: &#x27;file2.txt&#x27; });
+
+// append a file from buffer
+var buffer3 = new Buffer(&#x27;buff it!&#x27;);
+archive.append(buffer3, { name: &#x27;file3.txt&#x27; });
+
+// append a file
+archive.<span class="apidocCodeKeywordSpan">file</span>(&#x27;file1.txt&#x27;, { name: &#x27;file4.txt&#x27; });
+
+// append files from a directory
+archive.directory(&#x27;subdir/&#x27;);
+
+// append files from a glob pattern
+archive.glob(&#x27;subdir/*.txt&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.finalize" id="apidoc.element.archiver.core.prototype.finalize">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>finalize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finalize = function () {
+  if (this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;finalize: archive was aborted&#x27;));
+    return this;
+  }
+
+  if (this._state.finalize) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;finalize: archive already finalizing&#x27;));
+    return this;
+  }
+
+  this._state.finalize = true;
+
+  if (this._pending === 0 &#x26;&#x26; this._queue.idle() &#x26;&#x26; this._statQueue.idle()) {
+    this._finalize();
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// append files from a directory
+archive.directory(&#x27;subdir/&#x27;);
+
+// append files from a glob pattern
+archive.glob(&#x27;subdir/*.txt&#x27;);
+
+// finalize the archive (ie we are done appending files but streams have to finish yet)
+archive.<span class="apidocCodeKeywordSpan">finalize</span>();
+```
+
+## Formats
+
+Archiver ships with out of the box support for TAR and ZIP archives.
+
+You can register additional formats with `registerFormat`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.glob" id="apidoc.element.archiver.core.prototype.glob">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>glob
+        <span class="apidocSignatureSpan">(pattern, options, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">glob = function (pattern, options, data) {
+  this._pending++;
+
+  options = util.defaults(options, {
+    stat: false
+  });
+
+  function onGlobEnd() {
+    this._pending--;
+    this._maybeFinalize();
+  }
+
+  function onGlobError(err) {
+    this.emit(&#x27;error&#x27;, &#x27;glob: &#x27; + err);
+  }
+
+  function onGlobMatch(match){
+    entryData = _.extend({}, data);
+
+    if (options.cwd) {
+      entryData.name = match;
+      match = globber._makeAbs(match);
+    }
+
+    this._append(match, entryData);
+  }
+
+  var globber = glob(pattern, options);
+  globber.on(&#x27;error&#x27;, onGlobError.bind(this));
+  globber.on(&#x27;match&#x27;, onGlobMatch.bind(this));
+  globber.on(&#x27;end&#x27;, onGlobEnd.bind(this));
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// append a file
+archive.file(&#x27;file1.txt&#x27;, { name: &#x27;file4.txt&#x27; });
+
+// append files from a directory
+archive.directory(&#x27;subdir/&#x27;);
+
+// append files from a glob pattern
+archive.<span class="apidocCodeKeywordSpan">glob</span>(&#x27;subdir/*.txt&#x27;);
+
+// finalize the archive (ie we are done appending files but streams have to finish yet)
+archive.finalize();
+```
+
+## Formats
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.pointer" id="apidoc.element.archiver.core.prototype.pointer">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>pointer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pointer = function () {
+  return this._pointer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var output = fs.createWriteStream(__dirname + &#x27;/example.zip&#x27;);
+var archive = archiver(&#x27;zip&#x27;, {
+    store: true // Sets the compression method to STORE.
+});
+
+// listen for all archive data to be written
+output.on(&#x27;close&#x27;, function() {
+  console.log(archive.<span class="apidocCodeKeywordSpan">pointer</span>() + &#x27; total bytes&#x27;);
+  console.log(&#x27;archiver has been finalized and the output file descriptor has closed.&#x27;);
+});
+
+// good practice to catch this error explicitly
+archive.on(&#x27;error&#x27;, function(err) {
+  throw err;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.setFormat" id="apidoc.element.archiver.core.prototype.setFormat">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>setFormat
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setFormat = function (format) {
+  if (this._format) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;format: archive format already set&#x27;));
+    return this;
+  }
+
+  this._format = format;
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {String} format The archive format to use.
+ * @param  {Object} options See [Archiver]{@link Archiver}
+ * @return {Archiver}
+ */
+vending.create = function(format, options) {
+  if (formats[format]) {
+    var instance = new Archiver(format, options);
+    instance.<span class="apidocCodeKeywordSpan">setFormat</span>(format);
+    instance.setModule(new formats[format](options));
+
+    return instance;
+  } else {
+    throw new Error(&#x27;create(&#x27; + format + &#x27;): format not registered&#x27;);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.setModule" id="apidoc.element.archiver.core.prototype.setModule">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>setModule
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setModule = function (module) {
+  if (this._state.aborted) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;module: archive was aborted&#x27;));
+    return this;
+  }
+
+  if (this._state.module) {
+    this.emit(&#x27;error&#x27;, new Error(&#x27;module: module already set&#x27;));
+    return this;
+  }
+
+  this._module = module;
+  this._modulePipe();
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param  {Object} options See [Archiver]{@link Archiver}
+ * @return {Archiver}
+ */
+vending.create = function(format, options) {
+  if (formats[format]) {
+    var instance = new Archiver(format, options);
+    instance.setFormat(format);
+    instance.<span class="apidocCodeKeywordSpan">setModule</span>(new formats[format](options));
+
+    return instance;
+  } else {
+    throw new Error(&#x27;create(&#x27; + format + &#x27;): format not registered&#x27;);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.archiver.core.prototype.use" id="apidoc.element.archiver.core.prototype.use">
+        function <span class="apidocSignatureSpan">archiver.core.prototype.</span>use
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (plugin) {
+  this._streams.push(plugin);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
