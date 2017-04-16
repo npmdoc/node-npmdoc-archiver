@@ -1,15 +1,15 @@
 <svg height="190" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="190" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-03 10:21:11 +0000    43979 byte  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-03 10:21:11 +0000     1940 byte  CHANGELOG.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-03 10:21:11 +0000     1100 byte  LICENSE</tspan>
-<tspan x="10" y="74">  3.  2017-04-03 10:21:11 +0000     2156 byte  README.md</tspan>
-<tspan x="10" y="90">  4.  2017-04-03 10:21:11 +0000     2008 byte  index.js</tspan>
-<tspan x="10" y="106">  5.  2017-04-03 10:21:11 +0000    23675 byte  lib/core.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-03 10:21:11 +0000     2158 byte  lib/plugins/json.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-03 10:21:11 +0000     4016 byte  lib/plugins/tar.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-03 10:21:11 +0000     3918 byte  lib/plugins/zip.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-03 10:21:11 +0000     3008 byte  package.json</tspan>
+<tspan x="10" y="26">  0.  2017-04-16 08:38:05 +0000    43979 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-16 08:38:05 +0000     1940 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-16 08:38:05 +0000     1100 bytes  LICENSE</tspan>
+<tspan x="10" y="74">  3.  2017-04-16 08:38:05 +0000     2156 bytes  README.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-16 08:38:05 +0000     2008 bytes  index.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-16 08:38:05 +0000    23675 bytes  lib/core.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-16 08:38:05 +0000     2158 bytes  lib/plugins/json.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-16 08:38:05 +0000     4016 bytes  lib/plugins/tar.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-16 08:38:05 +0000     3918 bytes  lib/plugins/zip.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-16 08:38:05 +0000     3008 bytes  package.json</tspan>
 </text>
 </svg>
